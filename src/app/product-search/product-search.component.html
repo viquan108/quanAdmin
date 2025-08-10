@@ -1,0 +1,91 @@
+<div>
+    SKU Search:
+    <div [formGroup]="searchForm">
+        <input 
+            type="text"
+            formControlName="keyword">
+        <input type="button" value="Search" (click)="onSearch('SKU')">
+    </div>
+
+    <div>
+        <p>Selected entry:</p>
+        <div *ngIf="selectedEntry">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Sku</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Condition</th>
+                    <th>Price</th>
+                    <th>Resources</th>
+                    <th>Tags</th>
+                    <th>Company Name (brand)</th>
+                    <th>Category</th>
+                    <th>Mount Type</th>
+                </tr>
+                <tr>
+                    <td>{{selectedEntry['id']}}</td>
+                    <td>{{selectedEntry['sku']}}</td>
+                    <td>{{selectedEntry['productName']}}</td>
+                    <td>{{selectedEntry['description']}}</td>
+                    <td>{{selectedEntry['condition']}}</td>
+                    <td>{{selectedEntry['price']}}</td>
+                    <td>{{selectedEntry['resources']}}</td>
+                    <td>{{selectedEntry['tags']}}</td>
+                    <td>{{selectedEntry['cname']}}</td>
+                    <td>{{selectedEntry['category']}}</td>
+                    <td>{{selectedEntry['mountType']}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div *ngIf="searchResult">
+            <mat-expansion-panel [expanded]="expand">
+                    <mat-expansion-panel-header>
+                        Search Results:
+                    </mat-expansion-panel-header>
+                      
+                    <ng-template matExpansionPanelContent>
+                        <div *ngIf="searchResult">
+                            <table>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Sku</th>
+                                    <th>Product Name</th>
+                                    <th>Description</th>
+                                    <th>Condition</th>
+                                    <th>Price</th>
+                                    <th>Resources</th>
+                                    <th>Tags</th>
+                                    <th>Company Name (brand)</th>
+                                    <th>Category</th>
+                                    <th>Mount Type</th>
+                            
+                                </tr>
+                                <tr 
+                                    *ngFor="let entry of searchResult"
+                                    (click)="selectProduct(entry)"
+                                >
+                                    <td>{{entry['id']}}</td>
+                                    <td>{{entry['sku']}}</td>
+                                    <td>{{entry['productName']}}</td>
+                                    <td>{{entry['description']}}</td>
+                                    <td>{{entry['condition']}}</td>
+                                    <td>{{entry['price']}}</td>
+                                    <td>{{entry['resources']}}</td>
+                                    <td>{{entry['tags']}}</td>
+                                    <td>{{entry['cname']}}</td>
+                                    <td>{{entry['category']}}</td>
+                                    <td>{{entry['mountType']}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </ng-template>
+            </mat-expansion-panel>
+    </div>
+
+    
+</div>
+    

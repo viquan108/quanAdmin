@@ -1,0 +1,19 @@
+<!-- <div>
+    Result:
+    <div class="terminal-view">
+            {{serverResponse}}
+    </div>
+</div> -->
+
+
+<div class="output-panel">
+        <mat-expansion-panel [expanded]="true" class="terminal-view" container-background-color="black">
+                <mat-expansion-panel-header>
+                    <mat-panel-title> Server Response: </mat-panel-title>
+                </mat-expansion-panel-header>
+                  
+                <ng-template class="expand-body" matExpansionPanelContent>
+                        {{serverResponse}}
+                </ng-template>
+        </mat-expansion-panel>
+</div>

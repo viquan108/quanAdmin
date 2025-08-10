@@ -1,0 +1,8 @@
+::ng-deep ngx-file-drop > div.ngx-file-drop__drop-zone{
+    border:1px dashed gray!important;
+    border-radius: 3px!important;
+}
+
+::ng-deep .ngx-file-drop__content{
+    color:black!important;
+}

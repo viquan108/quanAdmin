@@ -1,0 +1,49 @@
+<div>
+    <div>
+        <mat-tab-group
+            (selectedTabChange)="ontabChange($event)"
+            >
+            <div>
+            <!-- [selectedIndex]="2"
+            (selectedTabChange)="onConditionClick($event)" -->
+            <!-- New Entry -->
+            <mat-tab id="create" label="New Product"> 
+                <div class="container">
+                    <app-product-form
+                        [formValue]="productFormValue"
+                        (onSubmitFormEvent)="onSubmit($event)"    
+                    ></app-product-form>
+                </div>
+
+            </mat-tab>
+            <!-- Update Entry -->
+            <mat-tab label="Update Product"> 
+                <div class="container">
+                    <app-product-search
+                        (onSelectProduct)="onSelectProduct($event)"
+                        ></app-product-search>
+                    <app-product-form
+                        [formValue]="productFormValue"
+                        (onSubmitFormEvent)="onSubmit($event)"    
+                    ></app-product-form>
+                </div>
+            </mat-tab>
+            <!-- Delete entry  -->
+            <mat-tab label="Delete Product"> 
+                <div class="container">
+                    <app-product-search
+                        (onSelectProduct)="onSelectProduct($event)"
+                    ></app-product-search>  
+                </div>
+            </mat-tab>
+            </div>
+        </mat-tab-group> 
+        
+        <div class="spacer"></div>
+        
+        <app-output-view
+            [serverResponse]="serverResponse"
+        ></app-output-view>
+    </div>
+
+</div>

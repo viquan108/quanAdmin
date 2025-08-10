@@ -1,0 +1,10 @@
+{
+    "/backend/*": {
+      "target": "http://localhost:9090",
+      "secure": false,
+      "pathRewrite":{
+        "^/backend":""
+      },
+      "logLevel": "info"
+    }
+  }
