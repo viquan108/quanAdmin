@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CommonService {
 
-  serviceBaseUrl: string = 'http://localhost:4300/backend';
+  serviceBaseUrl: string = 'http://192.168.1.72:4300/backend';  //4300/backend';
   constructor(private http: HttpClient) { }
 
   createNewEntry(payload:any){

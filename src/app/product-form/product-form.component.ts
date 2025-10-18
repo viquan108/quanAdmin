@@ -47,7 +47,7 @@ export class ProductFormComponent {
   tagExisted:boolean = false;
   resourcesList: string[] = [];
   fileToUpload: File | null = null;
-  resourceBaseUrl:string = 'http://localhost:9090/img/';
+  resourceBaseUrl:string = 'http://192.168.1.72:80/img/';
 
   dialog = inject(Dialog);
 
